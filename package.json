@@ -1,0 +1,8 @@
+{
+  "name": "kate-seo-interactive",
+  "version": "1.0.0",
+  "description": "Interactive SEO analysis for Kate's Salon Space",
+  "scripts": {
+    "serve": "python3 -m http.server 8000"
+  }
+}
