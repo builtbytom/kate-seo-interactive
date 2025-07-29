@@ -51,6 +51,12 @@ header {
 .logo {
     display: flex;
     flex-direction: column;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.logo:hover {
+    opacity: 0.8;
 }
 
 .logo-text {
