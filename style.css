@@ -540,8 +540,17 @@ p {
 }
 
 .technical-issues {
-    background: linear-gradient(135deg, rgba(239, 68, 68, 0.05) 0%, rgba(248, 113, 113, 0.05) 100%);
-    border-left-color: var(--danger);
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.05) 0%, rgba(251, 191, 36, 0.05) 100%);
+    border-left-color: var(--accent);
+}
+
+.real-impact-box {
+    background: rgba(27, 77, 62, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    text-align: center;
+    border: 2px dashed var(--primary);
 }
 
 .tldr-box {
