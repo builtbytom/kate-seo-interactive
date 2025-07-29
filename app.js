@@ -26,8 +26,41 @@ function trackProgress(sectionId) {
     sectionsViewed.add(sectionId);
     
     // If they've viewed all sections, you could trigger something special
-    if (sectionsViewed.size >= 6) {
+    if (sectionsViewed.size >= 5) {  // Updated from 6 to 5 since we removed letmedoit section
         console.log('User has viewed all sections');
+    }
+}
+
+// Copy content function for the copy buttons
+function copyContent(button) {
+    const contentBox = button.previousElementSibling;
+    const text = contentBox.textContent || contentBox.innerText;
+    
+    navigator.clipboard.writeText(text).then(() => {
+        const originalText = button.innerHTML;
+        button.innerHTML = '<svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Copied!';
+        button.style.background = 'var(--secondary)';
+        
+        setTimeout(() => {
+            button.innerHTML = originalText;
+            button.style.background = 'var(--primary)';
+        }, 2000);
+    });
+}
+
+// Share report function
+function shareReport() {
+    if (navigator.share) {
+        navigator.share({
+            title: 'SEO Analysis for Kate - Salon Space',
+            text: 'Check out this detailed SEO analysis that shows real opportunities for local businesses',
+            url: window.location.href
+        });
+    } else {
+        // Fallback: copy URL to clipboard
+        navigator.clipboard.writeText(window.location.href).then(() => {
+            alert('Link copied to clipboard!');
+        });
     }
 }
 
