@@ -201,7 +201,7 @@ p {
 }
 
 /* Buttons */
-.btn-primary, .btn-secondary, .btn-contact, .btn-share {
+.btn-primary, .btn-secondary, .btn-contact, .btn-share, .btn-back {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -214,6 +214,23 @@ p {
     border: none;
     transition: all 0.3s ease;
     margin-top: 1.5rem;
+}
+
+.btn-back {
+    background: transparent;
+    color: var(--text-light);
+    border: 1px solid var(--border);
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    align-self: flex-start;
+}
+
+.btn-back:hover {
+    background: var(--bg-light);
+    color: var(--text);
+    border-color: var(--primary);
 }
 
 .btn-primary {

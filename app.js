@@ -11,11 +11,36 @@ function showSection(sectionId) {
     if (targetSection) {
         targetSection.classList.remove('hidden');
         
+        // Update breadcrumb
+        updateBreadcrumb(sectionId);
+        
         // Smooth scroll to top
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
+    }
+}
+
+// Update breadcrumb navigation
+function updateBreadcrumb(sectionId) {
+    const sectionNames = {
+        'intro': 'Introduction',
+        'reality': 'Current Situation',
+        'diagnosis': 'Technical Analysis',
+        'opportunity': 'Growth Opportunity',
+        'solution': 'Action Plan',
+        'timeline': 'Success Timeline'
+    };
+    
+    const breadcrumb = document.getElementById('breadcrumb');
+    const currentSection = document.getElementById('currentSection');
+    
+    if (sectionId === 'intro') {
+        breadcrumb.style.display = 'none';
+    } else {
+        breadcrumb.style.display = 'block';
+        currentSection.textContent = sectionNames[sectionId] || sectionId;
     }
 }
 
