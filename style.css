@@ -527,6 +527,23 @@ p {
     border-left-color: var(--danger);
 }
 
+.tldr-box {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(52, 211, 153, 0.1) 100%);
+    border-left: 4px solid var(--secondary);
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: 0 16px 16px 0;
+    position: relative;
+}
+
+.tldr-box::before {
+    content: '✨';
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+}
+
 .real-results, .real-comparison {
     margin: 2rem 0;
 }
